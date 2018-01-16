@@ -3,9 +3,10 @@
 set -e
 set -o pipefail
 
-echo "Disable ipatbles"
-sudo service iptables stop
-sudo chkconfig iptables off
+# iptables does not exists in this container
+# echo "Disable ipatbles"
+# sudo service iptables stop
+# sudo chkconfig iptables off
 
 pushd /usr/local/
   if [ ! -d zeppelin ]; then
