@@ -11,8 +11,18 @@ set -o pipefail
 pushd /usr/local/
   if [ ! -d zeppelin ]; then
 
+    #
+    read -p "Make sure you have already started hadoop services. (yes to continue, no to abort and try again after your services started) [y/N]" -n 1 -r
+    echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "Starting..."
+    else
+        echo "Aborted.."
+        exit 1
+    fi
+
     echo "Downloading Zeppelin..."
-    wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.2/zeppelin-0.7.2-bin-netinst.tgz
+    axel -n 8 http://archive.apache.org/dist/zeppelin/zeppelin-0.7.2/zeppelin-0.7.2-bin-netinst.tgz
     tar -xzf zeppelin-0.7.2-bin-netinst.tgz
     rm -rf zeppelin-0.7.2-bin-netinst.tgz
     mv zeppelin-0.7.2-bin-netinst zeppelin
