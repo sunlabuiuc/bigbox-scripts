@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+pushd /scripts
+
+git fetch origin
+git reset --hard origin/master
+
+popd  # /scripts
+
+# pushd /bootcamp
+#
+# git fetch origin
+# git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)
+#
+# popd
