@@ -22,7 +22,7 @@ pushd /usr/local/
     fi
 
     echo "Downloading Zeppelin..."
-    axel -n 8 http://www.gtlib.gatech.edu/pub/apache/zeppelin/zeppelin-0.7.3/zeppelin-0.7.3-bin-netinst.tgz
+    axel -n 8 https://github.com/yuikns/bigbox-scripts/releases/download/v0.0.1/zeppelin-0.7.3-bin-netinst.tgz
     tar -xzf zeppelin-0.7.3-bin-netinst.tgz
     rm -rf zeppelin-0.7.3-bin-netinst.tgz
     mv zeppelin-0.7.3-bin-netinst zeppelin
