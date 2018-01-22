@@ -30,7 +30,7 @@ export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"
 # export HADOOP_CLASSPATH="$HADOOP_CLASSPATH:$HIVE_HOME/lib/*"
 
 # Zeppelin Section
-export ZEPPELIN_MEM=" -Xms2048m -Xmx2048m -XX:MaxPermSize=1024m "
+# export ZEPPELIN_MEM=" -Xms2048m -Xmx2048m -XX:MaxPermSize=1024m "
 export ZEPPELIN_INTP_MEM=" -Xms2048m -Xmx2048m -XX:MaxPermSize=1024m "
 
 
