@@ -40,9 +40,10 @@ pushd /usr/local/
       cat conf/zeppelin-site.xml.template > conf/zeppelin-site.xml
       sed -i 's/8080/9530/' conf/zeppelin-site.xml
       echo '#!/bin/bash' > conf/zeppelin-env.sh
+      # initialize the environment
+      echo '[ -f /etc/profile.d/bigbox.sh ] && . /etc/profile.d/bigbox.sh' >> conf/zeppelin-env.sh
       # unmatched spark
       echo 'unset SPARK_HOME' >> conf/zeppelin-env.sh # use embedded spark binaries
-      echo '[ -f /etc/profile.d/bigbox.sh ] && . /etc/profile.d/bigbox.sh' >> conf/zeppelin-env.sh
       cat conf/zeppelin-env.sh.template >> conf/zeppelin-env.sh
 
     popd # /usr/local/
