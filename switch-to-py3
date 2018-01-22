@@ -1,0 +1,6 @@
+echo "NOTE: You are supposed to use 'source /scripts/switch-to-py3' to apply this patch"
+
+echo "Update Environment:"
+export PATH=${PATH//\/usr\/local\/conda2\/bin/\/usr\/local\/conda3\/bin}
+echo "Current PATH:"$PATH
+
