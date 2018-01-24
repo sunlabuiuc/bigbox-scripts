@@ -57,17 +57,14 @@ sudo -u root service hadoop-hdfs-namenode start
 sudo -u root service hadoop-hdfs-datanode start
 sudo -u root service hadoop-yarn-resourcemanager start
 
-# Version 1.x
-# sudo -u hdfs hadoop fs -mkdir -p /tmp
-# sudo -u hdfs hadoop fs -chmod 777 /tmp
-# sudo -u hdfs hadoop fs -mkdir -p /app
-# sudo -u hdfs hadoop fs -chmod 777 /app
 
-# Version 2.0+
 sudo -u hdfs hdfs dfs -mkdir -p /app
 sudo -u hdfs hdfs dfs -chmod 777 /app
 sudo -u hdfs hdfs dfs -mkdir -p /user
 sudo -u hdfs hdfs dfs -chmod 755 /user
+# for hive
+sudo -u hdfs hdfs dfs -mkdir -p /user/hive/warehouse
+sudo -u hdfs hdfs dfs -chown -R root /user/hive
 sudo -u hdfs hdfs dfs -mkdir -p /tmp
 sudo -u hdfs hdfs dfs -chmod 777 /tmp
 
