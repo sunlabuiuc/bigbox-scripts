@@ -6,6 +6,10 @@ if [ ! -d /usr/local/conda2 ]; then
   chmod +x miniconda.sh
   ./miniconda.sh -b -p /usr/local/conda2
   rm -rf miniconda.sh
+
+  echo "Install Basic Dependences"
+  conda install --yes numpy ipython
+
 fi
 
 echo "Update Environment:"
@@ -16,7 +20,4 @@ echo "Current PATH:"$PATH
 echo "Update Profile:"
 sed -i  's/\/usr\/local\/conda3/\/usr\/local\/conda2/g' /etc/profile.d/bigbox.sh
 
-
-echo "Install Basic Dependences"
-conda install --yes numpy ipython
 
