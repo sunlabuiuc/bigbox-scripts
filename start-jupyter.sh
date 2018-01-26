@@ -10,11 +10,11 @@ do_serve() {
   nohup jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token='' \
       > $LOG_FILE 2>&1  & echo $! > $PID_FILE
   echo_success
-  echo "Jupyter Is Started, Log File: `$LOG_FILE` Pid File: `$PID_FILE`"
+  echo "Jupyter Is Started, Log File: $LOG_FILE Pid File: $PID_FILE"
 }
 
 if status -p $PID_FILE jupyter ; then
-  echo "Jupyter Is Already Running, Log File: `$LOG_FILE` Pid File: `$PID_FILE`"
+  echo "Jupyter Is Already Running, Log File: $LOG_FILE Pid File: $PID_FILE"
   echo_failure
 else
 
