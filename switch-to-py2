@@ -14,7 +14,7 @@ echo "Current PATH:"$PATH
 
 
 echo "Update Profile:"
-sed -i  's/\usr\/local\/conda3/\usr\/local\/conda2/g' /etc/profile.d/bigbox.sh
+sed -i  's/\/usr\/local\/conda3/\/usr\/local\/conda2/g' /etc/profile.d/bigbox.sh
 
 
 echo "Install Basic Dependences"

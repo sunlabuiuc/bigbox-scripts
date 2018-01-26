@@ -6,7 +6,7 @@ LOG_FILE=/var/log/jupyter.log
 if [ -f $PID_FILE ]; then
   JPID=$(cat $PID_FILE )
   echo "Stop Jupyter Service..."
-  kill -SIGINT $JPID
+  kill -9 $JPID
   rm -rf $PID_FILE
   echo "Log File: $LOG_FILE"
   echo "Latest Logs: "
