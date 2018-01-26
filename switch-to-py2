@@ -12,6 +12,11 @@ echo "Update Environment:"
 export PATH=${PATH//\/usr\/local\/conda3\/bin/\/usr\/local\/conda2\/bin}
 echo "Current PATH:"$PATH
 
+
+echo "Update Profile:"
+sed -i  's/\usr\/local\/conda3/\usr\/local\/conda2/g' /etc/profile.d/bigbox.sh
+
+
 echo "Install Basic Dependences"
 conda install --yes numpy ipython
 

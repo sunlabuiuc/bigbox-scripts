@@ -4,3 +4,7 @@ echo "Update Environment:"
 export PATH=${PATH//\/usr\/local\/conda2\/bin/\/usr\/local\/conda3\/bin}
 echo "Current PATH:"$PATH
 
+echo "Update Profile:"
+sed -i  's/\usr\/local\/conda2/\usr\/local\/conda3/g' /etc/profile.d/bigbox.sh
+
+
