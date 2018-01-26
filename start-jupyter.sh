@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 . /etc/init.d/functions # must exists
+. /etc/profile
 
 PID_FILE=/var/run/jupyter.pid
 LOG_FILE=/var/log/jupyter.log
