@@ -43,9 +43,17 @@ export CLASSPATH=$CLASSPATH:$HADOOP_CONF_DIR
 
 EOF
 
+# Disable systemd
+mv -f /bin/systemctl{,.orig}
+ln -sf /bin/{false,systemctl}
+
 # Fix: Class org.datanucleus.api.jdo.JDOPersistenceManagerFactory was not found.
 # 
 ln -sf /usr/lib/hive/lib/datanucleus-* /usr/lib/spark/lib/
+
+# Fix: Failed In Stop Services
+patch -fs /etc/init.d/hadoop-hdfs-namenode /scripts/patch/hadoop-hdfs-namenode.patch
+patch -fs /etc/init.d/hadoop-hdfs-datanode /scripts/patch/hadoop-hdfs-datanode.patch
 
 
 mkdir -p /data

@@ -1,0 +1,5 @@
+95c95,96
+<   start_daemon $EXEC_PATH --config "$CONF_DIR" stop $DAEMON_FLAGS
+---
+>   su -s /bin/bash $SVC_USER -c "$EXEC_PATH --config '$CONF_DIR' stop $DAEMON_FLAGS"
+>   # start_daemon $EXEC_PATH --config "$CONF_DIR" stop $DAEMON_FLAGS
