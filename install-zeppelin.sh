@@ -48,9 +48,9 @@ pushd /usr/local/
       # when user want to run interpreter as end web user
       echo 'export ZEPPELIN_IMPERSONATE_CMD='"'"'sudo -H -u ${ZEPPELIN_IMPERSONATE_USER} bash -c '"'"'' >> conf/zeppelin-env.sh
 
-      # 
-      mkdir logs
-      chmod 777 logs
+      # logs is exists..
+      # mkdir logs
+      [ -d logs ] && chmod 777 logs
 
     popd # /usr/local/
 
