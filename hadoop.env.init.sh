@@ -51,9 +51,15 @@ ln -sf /bin/{false,systemctl}
 # 
 ln -sf /usr/lib/hive/lib/datanucleus-* /usr/lib/spark/lib/
 
+# http://central.maven.org/maven2/org/apache/derby/derbyclient/10.14.1.0/derbyclient-10.14.1.0.jar
+
 # Fix: Failed In Stop Services
 patch -fs /etc/init.d/hadoop-hdfs-namenode /scripts/patch/hadoop-hdfs-namenode.patch
 patch -fs /etc/init.d/hadoop-hdfs-datanode /scripts/patch/hadoop-hdfs-datanode.patch
+
+# Zeppelin is another super user
+echo 'zeppelin ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/zeppelin
+
 
 
 mkdir -p /data

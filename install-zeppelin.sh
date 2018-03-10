@@ -45,6 +45,12 @@ pushd /usr/local/
       # unmatched spark
       echo 'unset SPARK_HOME' >> conf/zeppelin-env.sh # use embedded spark binaries
       cat conf/zeppelin-env.sh.template >> conf/zeppelin-env.sh
+      # when user want to run interpreter as end web user
+      echo 'export ZEPPELIN_IMPERSONATE_CMD='"'"'sudo -H -u ${ZEPPELIN_IMPERSONATE_USER} bash -c '"'"'' >> conf/zeppelin-env.sh
+
+      # 
+      mkdir logs
+      chmod 777 logs
 
     popd # /usr/local/
 
